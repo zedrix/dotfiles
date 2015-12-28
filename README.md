@@ -1,7 +1,8 @@
-# [Cătălin](https://github.com/alrra)’s dotfiles
+# A fork from [alrra](https://github.com/alrra)’s dotfiles
 
 These are the base dotfiles that I start with when I set up a
-new environment. For more specific local needs I use the `.local`
+new environment.
+For more specific local needs I use the `.local`
 files described in the [`Local Settings`](#local-settings) section.
 
 
@@ -15,8 +16,7 @@ understand [what it does](dotfiles). Seriously, **DON'T**!)
 
 | OS | Snippet |
 |:---:|:---|
-| OS X | `bash -c "$(curl -LsS https://raw.github.com/alrra/dotfiles/master/dotfiles)"` |
-| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/alrra/dotfiles/master/dotfiles)"` |
+| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/zedrix/dotfiles/master/dotfiles)"` |
 
 That's it! :sparkles:
 
@@ -30,20 +30,15 @@ The setup process will:
   [shell](shell), and
   [vim](vim) files
 * Install applications / command-line tools for
-  [OS X](os/os_x/installs/main.sh) /
   [Ubuntu](os/ubuntu/installs/main.sh)
 * Set custom
-  [OS X](os/os_x/preferences/main.sh) /
   [Ubuntu](os/ubuntu/preferences/main.sh) preferences
 * Install [vim plugins](vim/vim/plugins)
 
 <table>
     <tbody>
-        <tr><td colspan="2">Setup process in action</tr></td>
+        <tr><td colspan="1">Setup process in action</tr></td>
         <tr>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/11821505/91e437be-a372-11e5-9500-025c316fe22c.gif" alt="Setup process on OS X" width="100%">
-            </td>
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10560844/c580ee18-751f-11e5-8b15-2b8214bacdfd.gif" alt="Setup process on Ubuntu" width="100%">
             </td>
@@ -59,11 +54,8 @@ The setup process will:
 
 <table>
     <tbody>
-        <tr><td colspan="2">Output for Git status</tr></td>
+        <tr><td colspan="1">Output for Git status</tr></td>
         <tr>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10561038/f9f11a28-7525-11e5-8e1d-a304ad3557f9.png" alt="Output for Git status on OS X" width="100%">
-            </td>
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/8397636/3708d218-1ddb-11e5-9d40-21c6871271b9.png" alt="Output for Git status on Ubuntu" width="100%">
             </td>
@@ -73,11 +65,8 @@ The setup process will:
 
 <table>
     <tbody>
-        <tr><td colspan="2">Output for Git log</tr></td>
+        <tr><td colspan="1">Output for Git log</tr></td>
         <tr>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10560966/e4ec08a6-7523-11e5-8941-4e12f6550a63.png" alt="Output for Git status on OS X" width="100%">
-            </td>
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10560955/4b5e1300-7523-11e5-9e96-95ea67de9474.png" alt="Output for Git log on Ubuntu" width="100%">
             </td>
@@ -91,9 +80,6 @@ The setup process will:
 <table>
     <tbody>
         <tr>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10561007/498e1212-7525-11e5-8252-81503b3d6184.png" alt="tmux and vim on OS X" width="100%">
-            </td>
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10560956/557ca2de-7523-11e5-9000-fc1e189a95f5.png" alt="tmux and vim on Ubuntu" width="100%">
             </td>
@@ -150,8 +136,8 @@ as the `git` user credentials, e.g.:
 
 ```bash
 [user]
-    name = Cătălin Mariș
-    email = alrra@example.com
+    name = zedrix
+    email = zedrix@example.com
 ```
 
 #### `~/.vimrc.local`
@@ -163,12 +149,6 @@ settings from `~/.vimrc`.
 #### `~/.gvimrc.local`
 
 Same as `~/.vimrc.local` but for `~/.gvimrc`.
-
-### Forks
-
-If you decide to fork this project, don't forget to substitute my
-username with your own in the [setup snippets](#setup) and [in the
-`dotfiles` script](https://github.com/alrra/dotfiles/blob/5b524ba9ca07b66db1955d18a2fb66bf4b48f677/dotfiles#L3).
 
 
 ## Update
@@ -184,8 +164,6 @@ Inspiration and code was taken from many sources, including:
 
 * [Mathias Bynens'](https://github.com/mathiasbynens)
   [dotfiles](https://github.com/mathiasbynens/dotfiles)
-* [Nicolas Gallagher's](https://github.com/necolas)
-  [dotfiles](https://github.com/necolas/dotfiles)
 
 
 ## License

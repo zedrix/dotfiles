@@ -7,8 +7,10 @@ cd "$(dirname "$BASH_SOURCE")" \
 
 declare -r -a NPM_PACKAGES=(
     'babel-cli'
-    'jshint'
-    'svgo'
+    'bower'
+    'gulp'
+    'gulp-sass'
+
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

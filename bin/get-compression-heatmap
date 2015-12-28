@@ -20,9 +20,7 @@ get_script() {
     declare -r OS_NAME="$(uname -s)"
     local script='gzthermal'
 
-    if [ "$OS_NAME" == "Darwin" ]; then
-        script="$script/osx"
-    elif [ "$OS_NAME" == "Linux" ]; then
+    if [ "$OS_NAME" == "Linux" ]; then
         script="$script/linux"
 
         if [ "$(uname -m)" == "x86_64" ]; then

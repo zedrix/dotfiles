@@ -18,39 +18,13 @@ alias cd..='cd ..'
 
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-if [ "$OS" == 'osx' ]; then
-    alias local-ip='ipconfig getifaddr en1'
-elif [ "$OS" == 'ubuntu' ]; then
-    alias local-ip="ifconfig | \
-                    | grep 'inet addr' \
-                    | grep -v '127.0.0.1' \
-                    | cut -d: -f2 \
-                    | cut -d' ' -f1"
-fi
-
 # ----------------------------------------------------------------------
 # | Package Managers                                                   |
 # ----------------------------------------------------------------------
 
 # OS specific package managers
 
-if [ "$OS" == 'osx' ]; then
-
-    # Homebrew
-    if command -v 'brew' &> /dev/null; then
-        alias brewd='brew doctor'
-        alias brewi='brew install'
-        alias brewr='brew uninstall'
-        alias brews='brew search'
-        alias brewu='brew update \
-                      && brew upgrade --all \
-                      && brew cleanup \
-                      && brew cask cleanup'
-    fi
-
-elif [ "$OS" == 'ubuntu' ]; then
+if [ "$OS" == 'ubuntu' ]; then
 
     # Advanced Packaging Tool
     alias apti='sudo apt-get install'
@@ -65,16 +39,9 @@ fi
 
 # Update
 
-if [ "$OS" == 'osx' ]; then
 
-    alias u='sudo softwareupdate --install --all \
-                && brew update \
-                && brew upgrade --all \
-                && brew cleanup \
-                && npm install -g npm \
-                && npm update -g'
 
-elif [ "$OS" == 'ubuntu' ]; then
+if [ "$OS" == 'ubuntu' ]; then
 
     alias u='sudo apt-get update \
                 && sudo apt-get upgrade \
@@ -103,43 +70,14 @@ alias rm='rm -rf'
 
 # Copy to clipboard
 
-if [ "$OS" == 'osx' ]; then
-    alias cc='pbcopy'
-elif [ "$OS" == 'ubuntu' ]; then
+if [ "$OS" == 'ubuntu' ]; then
     alias cc='xclip -selection clip'
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Empty Trash
-
-if [ "$OS" == 'osx' ]; then
-
-    # Empty the trash, the main HDD and on all mounted volumes
-    # and clear Apple’s system logs to improve shell startup speed
-
-    alias empty-trash='sudo rm -frv /Volumes/*/.Trashes; \
-                       sudo rm -frv ~/.Trash; \
-                       sudo rm -frv /private/var/log/asl/*.asl; \
-                       sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* "delete from LSQuarantineEvent"'
-
-fi
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Hide/Show files
-
-if [ "$OS" == 'osx' ]; then
-
-    # Hide/Show desktop icons
-    alias hide-desktop-icons='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
-    alias show-desktop-icons='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
-
-    # Hide/Show hidden files in Finder
-    alias hide-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
-    alias show-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
-
-elif [ "$OS" == 'ubuntu' ]; then
+if [ "$OS" == 'ubuntu' ]; then
 
     # Hide/Show desktop icons
     alias hide-desktop-icons='gsettings set org.gnome.desktop.background show-desktop-icons false'
@@ -151,9 +89,7 @@ fi
 
 # Lock screen
 
-if [ "$OS" == 'osx' ]; then
-    alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-elif [ "$OS" == 'ubuntu' ]; then
+if [ "$OS" == 'ubuntu' ]; then
     alias akf='gnome-screensaver-command --lock'
 fi
 
@@ -161,9 +97,7 @@ fi
 
 # Open
 
-if [ "$OS" == 'osx' ]; then
-    alias o='open'
-elif [ "$OS" == 'ubuntu' ]; then
+if [ "$OS" == 'ubuntu' ]; then
     alias o='xdg-open'
 fi
 

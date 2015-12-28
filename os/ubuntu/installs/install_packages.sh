@@ -39,22 +39,19 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if ! package_is_installed 'google-chrome-unstable'; then
+    if ! package_is_installed 'java'; then
 
-        add_key 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
-        print_result $? "Chrome Canary (add key)"
-
-        add_to_source_list 'http://dl.google.com/linux/deb/ stable main' 'google-chrome.list'
-        print_result $? "Chrome Canary (add to package resource list)"
+        add_ppa 'webupd8team/java'
+        print_result $? "Java (add PPA)"
 
         update
 
-        install_package 'Chrome Canary' 'google-chrome-unstable'
+        install_package 'Java 8' 'oracle-java8-installer'
 
         printf '\n'
 
     else
-        print_success 'Chrome Canary'
+        print_success 'Java 8'
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -64,29 +61,6 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package 'cURL' 'curl'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package 'Dropbox' 'nautilus-dropbox'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if ! package_is_installed 'firefox-trunk'; then
-
-        printf '\n'
-
-        add_ppa 'ubuntu-mozilla-daily/ppa'
-        print_result $? "Firefox Nightly (add PPA)"
-
-        update
-
-        install_package 'Firefox Nightly' 'firefox-trunk'
-
-        printf '\n'
-
-    else
-        print_success 'Firefox Nightly'
-    fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -102,52 +76,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package 'GNOME Vim' 'vim-gnome'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package 'ImageMagick' 'imagemagick'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if ! package_is_installed 'opera'; then
-
-        printf '\n'
-
-        add_key 'http://deb.opera.com/archive.key'
-        print_result $? "Opera (add key)"
-
-        add_to_source_list 'http://deb.opera.com/opera-stable/ stable non-free' 'opera.list'
-        print_result $? "Opera (add to package resource list)"
-
-        update
-
-        install_package 'Opera' 'opera-stable'
-
-        printf '\n'
-
-    else
-        print_success 'Opera'
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if ! package_is_installed 'opera-beta'; then
-        install_package 'Opera Beta' 'opera-beta'
-    else
-        print_success 'Opera Beta'
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if ! package_is_installed 'opera-developer'; then
-        install_package 'Opera Developer' 'opera-developer'
-    else
-        print_success 'Opera Developer'
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package 'tmux' 'tmux'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -156,19 +84,39 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package 'VirtualBox' 'virtualbox'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package 'VLC' 'vlc'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package 'xclip' 'xclip'
+    install_package 'Apache 2' 'apache2'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package 'Zopfli' 'zopfli'
+    install_package 'Sound switcher indicator' 'indicator-sound-switcher'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'Guake Terminal' 'guake'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'Blueman bluetooth manager' 'blueman-manager'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'Htop' 'htop'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'php5' 'php5-mysql'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'Gparted' 'gparted'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package 'NTFS config' 'ntfs-config'
 
 }
 
